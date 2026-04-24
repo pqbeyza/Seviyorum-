@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seviyorum ❤️</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+    text-align: center;
+  }
+
+  .container {
+    margin-top: 80px;
+  }
+
+  #yazi {
+    margin-top: 20px;
+    font-size: 18px;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  iframe {
+    display: none;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Seni Seviyorum 🤍</h1>
+  <p>Bu site senin için 💕</p>
+  <button onclick="baslat()">Başlat 🎵</button>
+
+  <div id="yazi"></div>
+</div>
+
+<!-- Müzik -->
+<iframe id="muzik"
+src=""
+allow="autoplay">
+</iframe>
+
+<script>
+let i = 1;
+let interval;
+
+function baslat() {
+  // müzik başlat (mute önemli)
+  document.getElementById("muzik").src =
+    "https://www.youtube.com/embed/2nGKqH26xlg?autoplay=1&mute=1";
+
+  // tekrar basılınca hızlanmasın diye
+  if (interval) return;
+
+  interval = setInterval(() => {
+    document.getElementById("yazi").innerHTML +=
+      i + ". Seni seviyorum 🤍<br>";
+
+    i++;
+
+    // çok uzarsa kasmasın diye sınır
+    if (i > 200) clearInterval(interval);
+
+  }, 300); // daha hızlı yazı
+}
+</script>
+
+</body>
+</html>
