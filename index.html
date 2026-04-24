@@ -1,28 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-<meta charset="UTF-8">
-<title>Seni Seviyorum</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seviyorum ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      margin-top: 100px;
+    }
+
+    iframe {
+      display: none;
+    }
+  </style>
 </head>
 
-<body style="background:black; color:cyan; font-size:20px; text-align:center;">
+<body>
 
-<h2>Seni Seviyorum 🤍</h2>
+  <div class="container">
+    <h1>Seni Seviyorum ❤️</h1>
+    <p>Bu site senin için yapıldı</p>
+    <button onclick="baslat()">Müziği Başlat 🎵</button>
+  </div>
 
-<div id="yazi"></div>
+  <!-- YouTube müzik -->
+  <iframe id="muzik"
+    src=""
+    allow="autoplay">
+  </iframe>
 
-<iframe width="0" height="0"
-src="https://www.youtube.com/embed/4FHpmn-KYec?autoplay=1&loop=1&playlist=4FHpmn-KYec"
-frameborder="0" allow="autoplay">
-</iframe>
-
-<script>
-let i = 1;
-setInterval(() => {
-  document.getElementById("yazi").innerHTML += i + ". Seni seviyorum bebeğim 🤍<br>";
-  i++;
-}, 500);
-</script>
+  <script>
+    function baslat() {
+      document.getElementById("muzik").src =
+      "https://www.youtube.com/embed/2nGKqH26xlg?autoplay=1";
+    }
+  </script>
 
 </body>
 </html>
